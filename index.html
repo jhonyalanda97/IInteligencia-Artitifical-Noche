@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologías Modernas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tecnologías Modernas</h1>
+        <p>COLEGIO MAYOR DEL CAUCA</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#ia">Inteligencia Artificial</a></li>
+            <li><a href="#ciberseguridad">Ciberseguridad</a></li>
+            <li><a href="#nube">Computación en la Nube</a></li>
+            <li><a href="#resumen clase">Resumen</a></li>
+            <li><a href="#practica">practica python</a></li>
+        </ul>
+    </nav>
+
+    <section id="ia">
+        <h2>Inteligencia Artificial</h2>
+        <img src="img/l1.jpg" alt=" ">
+        <p>La inteligencia artificial (IA) se refiere a la simulación de procesos de inteligencia humana por parte de máquinas, especialmente sistemas informáticos. La IA ha revolucionado diversas industrias, desde la salud hasta el entretenimiento.
+            
+        La inteligencia artificial (IA) ha emergido como una de las tecnologías más transformadoras,impactando profundamente múltiples sectores y disciplinas. En el ámbito de la gestión tecnológica, la IA no solo optimiza procesos, sino que redefine la forma en que las empresas y organizaciones manejan sus recursos tecnológicos, toman decisiones estratégicas y enfrentan los desafíos del entorno digital. Este ensayo explora cómo la IA está revolucionando la gestión de la tecnología, desde la optimización de operaciones hasta la toma de decisiones estratégicas, y las implicaciones éticas que esto conlleva.  </p>
+    </section>
+
+    <section id="ciberseguridad">
+        <h2>Ciberseguridad</h2>
+        <img src="img/l2.webp" alt="#">
+        <p>La ciberseguridad es la práctica de proteger sistemas, redes y programas de ataques digitales. Estos ataques suelen tener como objetivo acceder, alterar o destruir información sensible, extorsionar a los usuarios o interrumpir procesos normales.
+        En la actualidad, la ciberseguridad ha pasado a ser una prioridad global, a medida que la dependencia de la tecnología sigue creciendo y las amenazas digitales se vuelven más sofisticadas. La ciberseguridad se refiere al conjunto de prácticas, tecnologías y procesos diseñados para proteger sistemas, redes y datos contra ataques, daños o accesos no autorizados. En un mundo cada vez más interconectado, donde los activos más valiosos de las empresas y gobiernos son los datos, asegurar la integridad, confidencialidad y disponibilidad de la información es esencial.
+        </p>
+    </section>
+
+    <section id="nube">
+        <h2>Computación en la Nube</h2>
+        <img src="img/l3.jpg" alt=" #">
+        <p>La computación en la nube permite el acceso remoto a software, almacenamiento y otros servicios informáticos a través de Internet, sin necesidad de tener un servidor físico en las instalaciones del usuario.
+        La computación en la nube ha revolucionado la forma en que las empresas e individuos interactúan con la tecnología, proporcionando flexibilidad, escalabilidad y eficiencia a un nivel sin precedentes. A medida que el mundo continúa avanzando hacia una mayor digitalización, la nube seguirá siendo un pilar fundamental en la evolución tecnológica, impulsando la innovación y habilitando nuevas oportunidades en todos los sectores. Sin embargo, para aprovechar al máximo su potencial, las organizaciones deberán abordar los desafíos de seguridad, conectividad y dependencia de proveedores, y adoptar estrategias que equilibren la eficiencia operativa con la protección de sus activos digitales.
+        </p>
+    </section>
+    <section id="conclucion">
+        <h2>resumen</h2>
+        <img src="img/l4.jpg" alt="Imagen representativa de la Computación en la Nube">
+        <p> En colombia se implemento un banco virtual sucesor de bancolombia para facilitar a los usuairos para ahorrar tiempo y dinero a la hora se hacer sus diligencias con asistentes vituales o chatbost que pueden las inquetudes que tiene los diferentes usuarios.
+        tambien con la computacion en la nube que los datos estan seguros y resguardados para poder mejorar la experiencia y confidencialidad del mismo.
+        </p>
+    </section>
+    <section id="algoritmos "></section>
+        <h2>QUEEU</h2>
+        <img src="img/queue mazeultimo.jpeg" alt=" ">
+        <p>  
+
+        </p>
+    </section>
+    <section id="algoritmos "></section>
+        <h2>resumen</h2>
+        <img src="img/queue mazeultimo.jpeg" alt=" ">
+        <p>  
+
+        </p>
+    </section>
+    <section id="CODIGO  "></section>
+        <h2>COMENTAR CODIGO</h2>
+        <img src="img/s.jpeg" alt=" ">
+        <p>  
+            import tensorflow as tf
+import numpy as np
+
+# Definimos dos arreglos de datos: Celsius y Fahrenheit para entrenamiento
+celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
+fahrenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
+
+# Creación de la red neuronal con 2 capas ocultas y 1 capa de salida
+# Primera capa oculta con 3 neuronas y una entrada (temperatura en Celsius)
+oculta1 = tf.keras.layers.Dense(units=3, input_shape=[1])
+
+# Segunda capa oculta con 3 neuronas
+oculta2 = tf.keras.layers.Dense(units=3)
+
+# Capa de salida con 1 neurona (predicción en Fahrenheit)
+salida = tf.keras.layers.Dense(units=1)
+
+# Definición del modelo secuencial con las capas creadas
+modelo = tf.keras.Sequential([oculta1, oculta2, salida])
+
+# Compilamos el modelo utilizando el optimizador Adam y la función de pérdida MSE
+modelo.compile(
+    optimizer=tf.keras.optimizers.Adam(0.1),  # Optimizador Adam con tasa de aprendizaje 0.1
+    loss='mean_squared_error'                 # Función de pérdida: error cuadrático medio
+)
+
+print("Comenzando entrenamiento...")
+
+# Entrenamos el modelo con los datos de entrada (Celsius) y salida (Fahrenheit)
+# Entrena durante 1000 épocas (ciclos) en silencio (verbose=False)
+historial = modelo.fit(celsius, fahrenheit, epochs=1000, verbose=False)
+
+print("Modelo entrenado!")
+
+# Importamos matplotlib para graficar la evolución de la pérdida
+import matplotlib.pyplot as plt
+plt.xlabel("# Epoca")
+plt.ylabel("Magnitud de pérdida")
+
+# Graficamos la pérdida a lo largo de las épocas
+plt.plot(historial.history["loss"])
+
+# Hacemos una predicción de cuántos grados Fahrenheit equivalen a 100 grados Celsius
+print("Hagamos una predicción!")
+resultado = modelo.predict([100.0])
+print("El resultado es " + str(resultado) + " fahrenheit!")
+
+# Mostramos los pesos internos del modelo después del entrenamiento
+print("Variables internas del modelo")
+# print(capa.get_weights())  # Si usaras una sola capa, aquí verías sus pesos
+
+# Mostramos los pesos aprendidos por la primera capa oculta
+print(oculta1.get_weights())
+
+# Mostramos los pesos aprendidos por la segunda capa oculta
+print(oculta2.get_weights())
+
+# Mostramos los pesos aprendidos por la capa de salida
+print(salida.get_weights())
+
+        </p>
+    </section>
+    
+    <section id="PRACTICA EN PYTHON">
+        <h2>PRACTICA DE PYTHON </h2>
+        <img src="img/l5" alt=" ">
+        <a href="https://colab.research.google.com/drive/1-MkInZbXkA2-V0XJ4mA0FQGljHJNlXfa?usp=sharing">CODIGO</a>
+        
+        <p> 
+            Python es un lenguaje de programación de alto nivel, ampliamente utilizado y conocido por su simplicidad y legibilidad. Fue creado por Guido van Rossum y lanzado por primera vez en 1991. Python es un lenguaje de propósito general, lo que significa que se puede utilizar para desarrollar una amplia variedad de aplicaciones, desde desarrollo web y análisis de datos hasta inteligencia artificial y automatización
+        </p>
+        
+    </section>
+    <section id="PRACTICA EN PYTHON">
+        <h2>PRACTICA DE PYTHON </h2>
+        <img src="img/l6" alt=" ">
+        <a href=" https://docs.google.com/document/d/1znStjbfF7Pex3rjQA8gRBxkroyYE4HKD/edit?usp=sharing&ouid=116967789351128565096&rtpof=true&sd=true">CODIGO PARCIAL</a>
+
+        
+        <p> 
+             codigo de algoritmos de BUSQUEDA 
+        </p>
+        
+    </section>
+    <section id="PRACTICA EN PYTHON">
+        <h2>PRACTICA DE PYTHON  comentar codigo </h2>
+        <img src="img/l6" alt=" ">
+        <a href=" <section id="PRACTICA EN PYTHON">
+            <h2>PRACTICA DE PYTHON </h2>
+            <img src="img/l6" alt=" ">
+            <a href=" https://docs.google.com/document/d/1znStjbfF7Pex3rjQA8gRBxkroyYE4HKD/edit?usp=sharing&ouid=116967789351128565096&rtpof=true&sd=true">CODIGO PARCIAL</a>
+    
+            
+            <p> 
+                 codigo de algoritmos de BUSQUEDA 
+            </p>
+            
+        </section>">CODIGO PARCIAL</a>
+
+        
+        <p> 
+             codigo de algoritmos de BUSQUEDA 
+        </p>
+        
+    </section>
+
+    <footer>
+        <p>  2024/15/agosto. charla</p>
+        <p>&copy; JOHN YALANDA</p>
+
+    </footer>
+</body>
+</html>
